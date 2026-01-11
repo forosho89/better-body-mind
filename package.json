@@ -22,8 +22,8 @@
     "eject": "react-scripts eject"
   },
   "reactSnap": {
-  "inlineCss": true
-},
+    "inlineCss": true
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
