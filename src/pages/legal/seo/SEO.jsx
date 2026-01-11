@@ -8,12 +8,14 @@ export default function SEO({
   type = "website",
   publishedTime,
   modifiedTime,
+  jsonLd = null,
 }) {
   useEffect(() => {
     document.title = title;
 
     setMeta("description", description);
     setLink("canonical", canonical);
+    setMeta("robots", "max-image-preview:large");
 
     // OpenGraph
     setMeta("og:title", title, true);
@@ -28,15 +30,78 @@ export default function SEO({
     setMeta("twitter:description", description);
     if (image) setMeta("twitter:image", image);
 
-    // Article times
+    // Article metadata
     if (type === "article") {
       if (publishedTime) setMeta("article:published_time", publishedTime, true);
       if (modifiedTime) setMeta("article:modified_time", modifiedTime, true);
     }
-  }, [title, description, canonical, image, type, publishedTime, modifiedTime]);
+
+    // JSON-LD
+    const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Better Body & Mind",
+  url: "https://bettermindandbody.com/better-body-mind",
+  description:
+    "Wellness, fitness, nutrition and mental clarity guidance for modern lifestyles.",
+  mainEntity: [
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What is Better Body & Mind?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "A modern wellness guide focused on sustainable habits, fitness, nutrition, sleep, and mental clarity.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What tools do you recommend?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "We recommend resistance bands, adjustable dumbbells, yoga mats, and meditation tools.",
+          },
+        },
+      ],
+    },
+    {
+      "@type": "ItemList",
+      itemListElement: [
+        {
+          "@type": "Product",
+          name: "Resistance Bands Set",
+          description: "Strength & mobility training",
+        },
+        {
+          "@type": "Product",
+          name: "Adjustable Dumbbells",
+          description: "Home strength training",
+        },
+        {
+          "@type": "Product",
+          name: "Yoga Mat",
+          description: "Stretching & yoga practice",
+        },
+      ],
+    },
+  ],
+};
+  }, [
+    title,
+    description,
+    canonical,
+    image,
+    type,
+    publishedTime,
+    modifiedTime,
+    jsonLd,
+  ]);
 
   return null;
-}
+};
+
 
 function setMeta(name, content, isProperty = false) {
   if (!content) return;

@@ -1,22 +1,18 @@
 import React from "react";
 import Ad from "../components/Ad";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
+import SEO from "./legal/seo/SEO"
 
 export default function Nutrition() {
   return (
     <>
-      <Helmet>
-        <title>Healthy Nutrition Habits for Energy, Focus & Longevity</title>
-        <meta
-          name="description"
-          content="Learn practical nutrition habits that support energy, brain health, digestion, and long-term wellness."
-        />
-        <link
-          rel="canonical"
-          href="https://aiandtechtoday.com/nutrition"
-        />
-      </Helmet>
+      <SEO
+       title="Exercise — Exercise & Movement for a Healthier Body and Mind"
+       description="Learn more about our mission to bring sustainable wellness and mental clarity to everyday life."
+       canonical="https://bettermindandbody.com/about"
+       image="/images/about-hero.jpg"
+       type="website"
+      />
 
       <section className="content-section">
         <div className="page">

@@ -9,7 +9,7 @@ export default function AffiliateLink({
     <a
       href={href}
       target="_blank"
-      rel="nofollow sponsored noopener"
+      rel="nofollow sponsored noopener noreferrer" 
       className={className}
     >
       {children}

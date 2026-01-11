@@ -1,37 +1,19 @@
 import React from "react";
 import Ad from "../components/Ad";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import AffiliateTable from "../components/AffiliateTable";
+import SEO from "./legal/seo/SEO";
 
 export default function Exercise() {
   return (
     <>
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "HealthTopicContent",
-            "name": "Exercise & Movement",
-            "description":
-              "Practical, science-backed exercise guidance for strength, mobility, and mental well-being.",
-            "audience": {
-              "@type": "Audience",
-              "audienceType": "General public",
-            },
-          })}
-        </script>
-
-        <title>Exercise & Movement for a Healthier Body and Mind</title>
-        <meta
-          name="description"
-          content="Discover simple, effective exercise routines that improve strength, mobility, mood, and long-term health — no gym required."
-        />
-        <link
-          rel="canonical"
-          href="https://aiandtechtoday.com/exercise"
-        />
-      </Helmet>
+      <SEO
+        title="Exercise — Exercise & Movement for a Healthier Body and Mind"
+              description="Learn more about our mission to bring sustainable wellness and mental clarity to everyday life."
+              canonical="https://bettermindandbody.com/about"
+              image="/images/about-hero.jpg"
+              type="website"
+      />
 
       <section className="content-section">
         <div className="page">

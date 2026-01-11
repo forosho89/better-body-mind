@@ -1,23 +1,19 @@
 import React from "react";
 import Ad from "../components/Ad";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import AffiliateTable from "../components/AffiliateTable";
+import SEO from "./legal/seo/SEO";
 
 export default function Sleep() {
   return (
     <>
-      <Helmet>
-        <title>Better Sleep Habits for Recovery, Focus & Mental Health</title>
-        <meta
-          name="description"
-          content="Discover science-backed sleep habits that improve recovery, mental clarity, mood, and long-term health."
-        />
-        <link
-          rel="canonical"
-          href="https://aiandtechtoday.com/sleep"
-        />
-      </Helmet>
+      <SEO
+        title="Exercise — Exercise & Movement for a Healthier Body and Mind"
+                    description="Learn more about our mission to bring sustainable wellness and mental clarity to everyday life."
+                    canonical="https://bettermindandbody.com/about"
+                    image="/images/about-hero.jpg"
+                    type="website"
+            />
 
       <section className="content-section">
         <div className="page">

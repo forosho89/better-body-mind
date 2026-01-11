@@ -1,22 +1,19 @@
 import React from "react";
 import Ad from "../components/Ad";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
+import SEO from "./legal/seo/SEO";
 
 export default function Mindfulness() {
   return (
     <>
-      <Helmet>
-        <title>Mindfulness & Mental Well-Being for a Balanced Life</title>
-        <meta
-          name="description"
-          content="Explore mindfulness practices that reduce stress, improve focus, and support emotional well-being."
-        />
-        <link
-          rel="canonical"
-          href="https://aiandtechtoday.com/mindfulness"
-        />
-      </Helmet>
+      <SEO
+        title="About Us — Mindfulness & Mental Well-Being for a Balanced Life"
+        description="Learn more about our mission to bring sustainable wellness and mental clarity to everyday life."
+        canonical="https://bettermindandbody.com/about"
+        image="/images/about-hero.jpg"
+        type="website"
+      />
+
 
       <section className="content-section">
         <div className="page">

@@ -1,54 +1,33 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
 import useReveal from "../hooks/useReveal";
 import Ad from "../components/Ad";
 import AffiliateLink from "../components/AffiliateLink";
 import { amazonSearchLink } from "../utils/amazonLink";
 import AffiliateTable from "../components/AffiliateTable";
+import SEO from "./legal/seo/SEO";
 
 function BetterBodyMind() {
   useReveal();
 
+  const jsonLdData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Better Body & Mind",
+  "description": "Your description here",
+  "url": "https://your-site.com/better-body-mind"
+};
+
   return (
     <>
-      <Helmet>
-        <title>Better Body & Mind — Wellness, Habits & Mental Clarity (2026)</title>
-
-        <meta
-          name="description"
-          content="Improve your body and mind with sustainable wellness habits, fitness routines, nutrition guidance, better sleep and mental clarity strategies."
-        />
-
-        <meta
-          name="keywords"
-          content="wellness tips, healthy habits, fitness routines, mental clarity, mindfulness, sleep improvement, nutrition, stress management"
-        />
-
-        <Link
-          rel="canonical"
-          href="https://bettermindandbody.com/better-body-mind"
-        />
-
-        {/* Open Graph */}
-        <meta property="og:title" content="Better Body & Mind — Wellness & Mental Clarity" />
-        <meta property="og:description" content="Science-backed wellness strategies for a healthier body and calmer mind." />
-        <meta property="og:image" content="/images/hero-wellness.jpg" />
-        <meta property="og:type" content="website" />
-
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            name: "Better Body & Mind",
-            url: "https://bettermindandbody.com/better-body-mind",
-            description:
-              "Wellness, fitness, nutrition and mental clarity guidance for modern lifestyles.",
-          })}
-        </script>
-      </Helmet>
-
+    <SEO
+  title="Better Body & Mind — Wellness, Habits & Mental Clarity (2026)"
+  description="Improve your body and mind with sustainable wellness habits, fitness routines, nutrition guidance, better sleep and mental clarity strategies."
+  canonical="https://bettermindandbody.com/better-body-mind"
+  image="/images/hero-wellness.jpg"
+  type="article"
+  jsonLd={jsonLdData}
+/>
+      
       <main className="bbm">
           {/* HERO */}
           <header className="bbm__hero">
@@ -144,6 +123,7 @@ function BetterBodyMind() {
               </article>
             </div>
           </section>
+          <Ad slot="1234567890" />
 
           {/* AFFILIATE SECTION */}
           <section className="bbm__section bbm__affiliate">
